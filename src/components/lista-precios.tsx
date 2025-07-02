@@ -221,7 +221,7 @@ export default function ListaPreciosMayorista() {
           </div>
 
           <div className="border-t border-gray-700 mt-6 pt-4 text-center">
-            <p className="text-sm text-gray-400">© 2024 Melina Vazquez Mobel. Todos los derechos reservados.</p>
+            <p className="text-sm text-gray-400">© 2025 Melina Vazquez Mobel. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
