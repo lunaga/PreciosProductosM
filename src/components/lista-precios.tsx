@@ -132,7 +132,7 @@ export default function ListaPreciosMayorista() {
     },
   ]
 
-  const formatearPrecio = (precio: number) => {
+const formatearPrecio = (precio: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
@@ -146,9 +146,7 @@ export default function ListaPreciosMayorista() {
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800">Melina Vazquez Mobel</h1>
-          <p className="text-center text-gray-600 mt-2 text-sm md:text-base">Lista de Precios Mayoristas
-            300.000 Primera Compra
-          </p>
+          <p className="text-center text-gray-600 mt-2 text-sm md:text-base">Lista de Precios Mayoristas</p>
         </div>
       </header>
 
@@ -170,12 +168,12 @@ export default function ListaPreciosMayorista() {
 
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Precio x Mayor:</span>
+                    <span className="text-sm text-gray-600">Precio Mayor:</span>
                     <span className="font-bold text-green-600 text-lg">{formatearPrecio(producto.precioMayor)}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Precio x Unidad:</span>
+                    <span className="text-sm text-gray-600">Precio Individual:</span>
                     <span className="font-semibold text-gray-700">{formatearPrecio(producto.precioIndividual)}</span>
                   </div>
                 </div>
@@ -221,7 +219,7 @@ export default function ListaPreciosMayorista() {
           </div>
 
           <div className="border-t border-gray-700 mt-6 pt-4 text-center">
-            <p className="text-sm text-gray-400">© 2025 Melina Vazquez Mobel. Todos los derechos reservados.</p>
+            <p className="text-sm text-gray-400">© 2024 Melina Vazquez Mobel. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
