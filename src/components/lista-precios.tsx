@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 
 // Componentes de iconos SVG
 const Phone = ({ className }: { className?: string }) => (
@@ -170,7 +171,7 @@ export default function ListaPreciosMayorista() {
     },
   ]
 
-   const formatearPrecio = (precio: number) => {
+    const formatearPrecio = (precio: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
@@ -246,7 +247,13 @@ return (
               <div className="flex items-center justify-center gap-4">
                 {/* Logo con imagen */}
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shadow-lg border-2 border-white">
-                  <img src="/images/logo.jpg" alt="Logo Melina Vazquez Mobel" className="w-full h-full object-cover" />
+                  <Image 
+                    src="/images/logo.jpg" 
+                    alt="Logo Melina Vazquez Mobel" 
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <div className="text-center">
@@ -292,9 +299,11 @@ return (
             <div key={producto.id} className={cardClass}>
               {/* Imagen del producto */}
               <div className="aspect-[4/3] relative overflow-hidden">
-                <img
+                <Image
                   src={producto.imagen || "/placeholder.svg"}
                   alt={producto.nombre}
+                  width={400}
+                  height={300}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -327,7 +336,7 @@ return (
       </main>
 
       {/* Footer con iconos SVG */}
-      <footer className="bg-gray-800 dark:bg-gray-950 text-white mt-12">
+      <footer className={footerClass}>
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-4">Contacto</h3>
@@ -354,8 +363,8 @@ return (
             </div>
           </div>
 
-          <div className="border-t border-gray-700 dark:border-gray-600 mt-6 pt-4 text-center">
-            <p className="text-sm text-gray-400 dark:text-gray-500">
+          <div className={footerBorderClass}>
+            <p className={footerTextClass}>
               © 2025 Melina Vazquez Mobel. Todos los derechos reservados.
             </p>
           </div>
