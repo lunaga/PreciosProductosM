@@ -1,8 +1,37 @@
-import Image from "next/image"
-import { Phone, Instagram } from 'lucide-react'
-import { Card, CardContent } from "@/components/ui/card"
+"use client"
+
+import { useState } from "react"
+
+// Componentes de iconos SVG
+const Phone = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+    />
+  </svg>
+)
+
+const Instagram = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01m-6.26 0h.01M7.5 4h9a3.5 3.5 0 013.5 3.5v9a3.5 3.5 0 01-3.5 3.5h-9A3.5 3.5 0 014 16.5v-9A3.5 3.5 0 017.5 4z"
+    />
+  </svg>
+)
 
 export default function ListaPreciosMayorista() {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode)
+  }
+
   const productos = [
     {
       id: 1,
@@ -19,7 +48,7 @@ export default function ListaPreciosMayorista() {
       imagen: "/images/especiero-paraiso.jpeg",
       precioMayor: 35000,
       precioIndividual: 26000,
-      minimo: 5,
+      minimo: 3,
       maximo: 20,
     },
     {
@@ -36,8 +65,8 @@ export default function ListaPreciosMayorista() {
       nombre: "Perchero 50 x 10cm Eucalipto",
       imagen: "/images/perchero.jpeg",
       precioMayor: 32000,
-      precioIndividual: 13000,
-      minimo: 4,
+      precioIndividual: 16900,
+      minimo: 3,
       maximo: 12,
     },
     {
@@ -46,7 +75,7 @@ export default function ListaPreciosMayorista() {
       imagen: "/images/dispenser.jpeg",
       precioMayor: 55000,
       precioIndividual: 3000,
-      minimo: 6,
+      minimo: 3,
       maximo: 12,
     },
     {
@@ -54,85 +83,94 @@ export default function ListaPreciosMayorista() {
       nombre: "Escalera Decorativa 160cm",
       imagen: "/images/escalerita.jpeg",
       precioMayor: 38000,
-      precioIndividual: 15000,
+      precioIndividual: 19500,
       minimo: 3,
       maximo: 10,
     },
     {
       id: 7,
       nombre: "Porta Velas Paraíso (incluye 3 velas)",
-      imagen: "/images",
+      imagen: "/images/velero.jpeg",
       precioMayor: 42000,
-      precioIndividual: 7600,
-      minimo: 2,
+      precioIndividual: 9800,
+      minimo: 3,
       maximo: 8,
     },
     {
       id: 8,
       nombre: "Estante J Paraíso 50 x 10cm",
-      imagen: "/images",
+      imagen: "/images/toallero-paraiso.jpeg",
       precioMayor: 48000,
       precioIndividual: 26000,
-      minimo: 2,
+      minimo: 3,
       maximo: 6,
     },
     {
       id: 9,
-      nombre: "Mesa De Luz H 60cm Alto Pino",
-      imagen: "/images",
+      nombre: "Mesa De Luz H 60cm Paraíso",
+      imagen: "/images/mesa-h.jpeg",
       precioMayor: 25000,
-      precioIndividual: 45000,
-      minimo: 4,
+      precioIndividual: 91000,
+      minimo: 3,
       maximo: 15,
     },
     {
       id: 10,
+      nombre: "Mesa De Luz H 60cm Pino",
+      imagen: "/images/mesa-h.jpeg",
+      precioMayor: 25000,
+      precioIndividual: 58000,
+      minimo: 3,
+      maximo: 1,
+    },
+    {
+      id: 11,
       nombre: "Mantas Ruisticas",
-      imagen: "/images",
+      imagen: "/images/mantas-rusticas.jpeg",
       precioMayor: 35000,
-      precioIndividual: 23000,
+      precioIndividual: 31000,
       minimo: 3,
       maximo: 10,
     },
     {
-      id: 11,
+      id: 12,
       nombre: "Dispenser Paraíso 20 x 12cm",
       imagen: "/images/jabonera.jpeg",
       precioMayor: 18000,
       precioIndividual: 6800,
-      minimo: 6,
-      maximo: 20,
-    },
-    {
-      id: 12,
-      nombre: "Tablas Rústicas",
-      imagen: "/images/",
-      precioMayor: 18000,
-      precioIndividual: 15000,
-      minimo: 6,
+      minimo: 3,
       maximo: 20,
     },
     {
       id: 13,
-      nombre: "Macetas Cerámica",
-      imagen: "/images/",
+      nombre: "Tablas Rústicas",
+      imagen: "/images/tablas-rusticas.jpeg",
       precioMayor: 18000,
-      precioIndividual: 6000,
-      minimo: 6,
+      precioIndividual: 39000,
+      minimo: 3,
       maximo: 20,
     },
     {
       id: 14,
+      nombre: "Macetas Cerámica",
+      imagen: "/images/macetas.jpeg",
+      precioMayor: 18000,
+      precioIndividual: 6000,
+      minimo: 3,
+      maximo: 20,
+    },
+    {
+      id: 15,
       nombre: "Plantas Artificiales (consultar según modelo y altura)",
-      imagen: "/images",
+      imagen: "/images/pnantas-artificiales.jpeg",
       precioMayor: 0,
       precioIndividual: 0,
-      minimo: 6,
+      minimo: 3,
       maximo: 20,
     },
   ]
 
-const formatearPrecio = (precio: number) => {
+   const formatearPrecio = (precio: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
       currency: "ARS",
@@ -140,58 +178,156 @@ const formatearPrecio = (precio: number) => {
     }).format(precio)
   }
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+  // Clases CSS dinámicas
+  const containerClass = isDarkMode
+    ? "min-h-screen transition-all duration-300 bg-gray-900"
+    : "min-h-screen transition-all duration-300 bg-gray-50"
+
+  const headerClass = isDarkMode
+    ? "shadow-sm border-b transition-colors duration-300 bg-gray-800 border-gray-700"
+    : "shadow-sm border-b transition-colors duration-300 bg-white border-gray-200"
+
+  const titleClass = isDarkMode
+    ? "text-2xl md:text-3xl lg:text-4xl font-bold transition-colors text-white"
+    : "text-2xl md:text-3xl lg:text-4xl font-bold transition-colors text-gray-800"
+
+  const subtitleClass = isDarkMode
+    ? "mt-1 text-sm md:text-base transition-colors text-gray-300"
+    : "mt-1 text-sm md:text-base transition-colors text-gray-600"
+
+  const buttonClass = isDarkMode
+    ? "ml-4 p-3 rounded-full border-2 transition-all duration-300 shadow-md hover:shadow-lg border-gray-600 bg-gray-800 hover:bg-gray-700"
+    : "ml-4 p-3 rounded-full border-2 transition-all duration-300 shadow-md hover:shadow-lg border-gray-300 bg-white hover:bg-gray-100"
+
+  const cardClass = isDarkMode
+    ? "rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-gray-800 border-gray-700 border"
+    : "rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-white border-gray-200 border"
+
+  const cardTitleClass = isDarkMode
+    ? "font-semibold text-lg mb-3 transition-colors text-white"
+    : "font-semibold text-lg mb-3 transition-colors text-gray-800"
+
+  const labelClass = isDarkMode ? "text-sm transition-colors text-gray-300" : "text-sm transition-colors text-gray-600"
+
+  const priceClass = isDarkMode
+    ? "font-bold text-lg transition-colors text-green-400"
+    : "font-bold text-lg transition-colors text-green-600"
+
+  const individualPriceClass = isDarkMode
+    ? "font-semibold transition-colors text-gray-200"
+    : "font-semibold transition-colors text-gray-700"
+
+  const borderClass = isDarkMode
+    ? "border-t pt-3 transition-colors border-gray-600"
+    : "border-t pt-3 transition-colors border-gray-200"
+
+  const minMaxClass = isDarkMode
+    ? "flex justify-between text-xs transition-colors text-gray-400"
+    : "flex justify-between text-xs transition-colors text-gray-500"
+
+  const footerClass = isDarkMode
+    ? "mt-12 transition-colors duration-300 bg-gray-950 text-white"
+    : "mt-12 transition-colors duration-300 bg-gray-800 text-white"
+
+  const footerBorderClass = isDarkMode
+    ? "border-t mt-6 pt-4 text-center transition-colors border-gray-600"
+    : "border-t mt-6 pt-4 text-center transition-colors border-gray-700"
+
+  const footerTextClass = isDarkMode
+    ? "text-sm transition-colors text-gray-500"
+    : "text-sm transition-colors text-gray-400"
+
+return (
+    <div className={containerClass}>
+      <header className={headerClass}>
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800">Melina Vazquez Mobel</h1>
-          <p className="text-center text-gray-600 mt-2 text-sm md:text-base">Lista de Precios Mayoristas</p>
+          <div className="flex justify-between items-center">
+            <div className="flex-1">
+              <div className="flex items-center justify-center gap-4">
+                {/* Logo con imagen */}
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shadow-lg border-2 border-white">
+                  <img src="/images/logo.jpg" alt="Logo Melina Vazquez Mobel" className="w-full h-full object-cover" />
+                </div>
+
+                <div className="text-center">
+                  <h1 className={titleClass}>Melina Vazquez Mobel</h1>
+                  <p className={subtitleClass}>Lista de Precios Mayoristas</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Botón de modo oscuro */}
+            <button
+              onClick={toggleDarkMode}
+              className={buttonClass}
+              aria-label={isDarkMode ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+            >
+              {isDarkMode ? (
+                <svg className="h-5 w-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              ) : (
+                <svg className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Contenido Principal */}
       <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {productos.map((producto) => (
-            <Card key={producto.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div key={producto.id} className={cardClass}>
+              {/* Imagen del producto */}
               <div className="aspect-[4/3] relative overflow-hidden">
-                <Image
+                <img
                   src={producto.imagen || "/placeholder.svg"}
                   alt={producto.nombre}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-lg mb-3 text-gray-800 line-clamp-2">{producto.nombre}</h3>
+
+              <div className="p-4">
+                <h3 className={cardTitleClass}>{producto.nombre}</h3>
 
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Precio Mayor:</span>
-                    <span className="font-bold text-green-600 text-lg">{formatearPrecio(producto.precioMayor)}</span>
+                    <span className={labelClass}>Precio Mayor:</span>
+                    <span className={priceClass}>{formatearPrecio(producto.precioMayor)}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">Precio Individual:</span>
-                    <span className="font-semibold text-gray-700">{formatearPrecio(producto.precioIndividual)}</span>
+                    <span className={labelClass}>Precio Individual:</span>
+                    <span className={individualPriceClass}>{formatearPrecio(producto.precioIndividual)}</span>
                   </div>
                 </div>
 
-                <div className="border-t pt-3">
-                  <div className="flex justify-between text-xs text-gray-500">
+                <div className={borderClass}>
+                  <div className={minMaxClass}>
                     <span>Mín: {producto.minimo} unidades</span>
                     <span>Máx: {producto.maximo} unidades</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white mt-12">
+      {/* Footer con iconos SVG */}
+      <footer className="bg-gray-800 dark:bg-gray-950 text-white mt-12">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-4">Contacto</h3>
@@ -218,8 +354,10 @@ const formatearPrecio = (precio: number) => {
             </div>
           </div>
 
-          <div className="border-t border-gray-700 mt-6 pt-4 text-center">
-            <p className="text-sm text-gray-400">© 2025 Melina Vazquez Mobel. Todos los derechos reservados.</p>
+          <div className="border-t border-gray-700 dark:border-gray-600 mt-6 pt-4 text-center">
+            <p className="text-sm text-gray-400 dark:text-gray-500">
+              © 2025 Melina Vazquez Mobel. Todos los derechos reservados.
+            </p>
           </div>
         </div>
       </footer>
