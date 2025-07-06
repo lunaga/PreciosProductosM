@@ -258,7 +258,7 @@ return (
 
                 <div className="text-center">
                   <h1 className={titleClass}>Melina Vazquez Mobel</h1>
-                  <p className={subtitleClass}>Lista de Precios Mayoristas</p>
+                  <p className={subtitleClass}>Lista de Precios Mayoristas. Primera compra mini $250.000</p>
                 </div>
               </div>
             </div>
@@ -313,12 +313,12 @@ return (
 
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between items-center">
-                    <span className={labelClass}>Precio Mayor:</span>
+                    <span className={labelClass}>Precio x Mayor:</span>
                     <span className={priceClass}>{formatearPrecio(producto.precioMayor)}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className={labelClass}>Precio Individual:</span>
+                    <span className={labelClass}>Precio x Unidad:</span>
                     <span className={individualPriceClass}>{formatearPrecio(producto.precioIndividual)}</span>
                   </div>
                 </div>
