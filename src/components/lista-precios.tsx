@@ -66,7 +66,7 @@ export default function ListaPreciosMayorista() {
       nombre: "Perchero 50 x 10cm Eucalipto",
       imagen: "/images/perchero.jpeg",
       precioMayor: 32000,
-      precioIndividual: 16900,
+      precioIndividual: 22000,
       minimo: 3,
       maximo: 12,
     },
@@ -126,7 +126,7 @@ export default function ListaPreciosMayorista() {
     },
     {
       id: 11,
-      nombre: "Mantas Ruisticas",
+      nombre: "Mantas Rusticas",
       imagen: "/images/mantas-rusticas.jpeg",
       precioMayor: 35000,
       precioIndividual: 31000,
@@ -153,15 +153,24 @@ export default function ListaPreciosMayorista() {
     },
     {
       id: 14,
-      nombre: "Macetas Cerámica",
+      nombre: "Troncos Rústicos",
       imagen: "/images/macetas.jpeg",
       precioMayor: 18000,
       precioIndividual: 6000,
       minimo: 3,
       maximo: 20,
     },
-    {
+      {
       id: 15,
+      nombre: "Macetas Cerámicas",
+      imagen: "/images/maceta.jpeg",
+      precioMayor: 0,
+      precioIndividual: 0,
+      minimo: 3,
+      maximo: 20,
+    },
+    {
+      id: 16,
       nombre: "Plantas Artificiales (consultar según modelo y altura)",
       imagen: "/images/pnantas-artificiales.jpeg",
       precioMayor: 0,
@@ -258,7 +267,7 @@ return (
 
                 <div className="text-center">
                   <h1 className={titleClass}>Melina Vazquez Mobel</h1>
-                  <p className={subtitleClass}>Lista de Precios Mayoristas. Primera compra mini $250.000</p>
+                  <p className={subtitleClass}>Lista de Precios Mayoristas. Primera compra minimo $250.000</p>
                 </div>
               </div>
             </div>
