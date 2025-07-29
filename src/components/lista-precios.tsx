@@ -47,7 +47,7 @@ export default function ListaPreciosMayorista() {
       id: 2,
       nombre: "Estante Especiero 50 x 10cm Paraíso",
       imagen: "/images/especiero-paraiso.jpeg",
-      precioMayor: 2600,
+      precioMayor: 26000,
       precioIndividual: 35000,
       minimo: 3,
       maximo: 20,
